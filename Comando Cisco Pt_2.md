@@ -123,11 +123,48 @@ exit
 >enable
 #show access-lists 
 ```
->OBS:Para que os códigos funcionem não é necessário que 
->os nomes sejam **GrêmioSérieB** ou **MesaGabigol_APP**!
+>OBS:Para que os códigos funcionem não é necessário que os nomes sejam **GrêmioSérieB** ou **MesaGabigol_APP**!
+Esses foram nomes aleatórios escolhidos por puro cunho _Futebolístico_. 
 
->Esses foram nomes aleatórios escolhidos por puro cunho _Futebolístico_. 
-
+# COMANDOS PAT
+**Configurar ACL para permitir endereços a serem convertidos**
+```
+>enable
+#configure terminal
+(config)#ip access-list (Nome da Access List) permit (Rede de Origem) (Wildcard de Origem) 
+```
+**Defina o Pool**
+```
+>enable
+#configure terminal
+(config)#ip nat pool (Nome-IPs-WAN-PAT) 0.0.0.0 0.0.0.0 netmask 0.0.0.0
+```
+**Criação do PAT (Vínculo da ACL ao Pool)**
+```
+>enable
+#configure terminal
+(config)#ip nat inside source list (nome-access-list) pool (nome-IP-WAN interface) Serial 0/0/0 overload
+```
+**Verificação do PAT**
+```
+>enable
+#show ip nat translations 
+```
+**Limpar conversões/sessões atuais**
+```
+>enable
+#clear ip nat translation 
+```
+**Verificação do Pool**
+```
+>enable
+#show ip nat statistics
+```
+**Limpar Estatisticas**
+```
+>enable
+#clear ip nat statistics
+```
 
 
 
