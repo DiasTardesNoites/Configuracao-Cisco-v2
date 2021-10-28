@@ -167,7 +167,22 @@ Esses foram nomes aleatórios escolhidos por puro cunho _Futebolístico_.
 ```
 
 
-
+# COMANDOS NAT
+**Definir Grupo HSRP**
+```
+>enable
+#configure terminal
+(config)#vlan "0"
+(config)#interface vlan "0"
+(config-if)#ip address "0.0.0.0" "0.0.0.0"
+```
+>OBS:Somente após a definição da VLAN e a configuração do IP deverá ser feita a **Definição de grupo HSRP**
+```
+(config-if)#standby "0" ip [Gateway da rede de acesso] 
+(config-if)#standby 10 preempt
+(config-if)#standby 10 priority 120
+```
+>OBS:Por padrão aa prioridade é  a **Definição de grupo HSRP**
 
 
 
