@@ -167,7 +167,7 @@ Esses foram nomes aleatórios escolhidos por puro cunho _Futebolístico_.
 ```
 
 
-# COMANDOS NAT
+# COMANDOS HSRP
 **Definir Grupo HSRP**
 ```
 >enable
@@ -182,8 +182,26 @@ Esses foram nomes aleatórios escolhidos por puro cunho _Futebolístico_.
 (config-if)#standby 10 preempt
 (config-if)#standby 10 priority 120
 ```
->OBS:Por padrão aa prioridade é  a **Definição de grupo HSRP**
-
+>OBS:Por padrão aa prioridade é 100
+**Obter informações detalhadas**
+```
+>enable
+#show standby vlan "0"
+```
+**Caso os Uplinks falhem, aplicamos _Interface Track_**
+```
+>enable
+#configure terminal
+(config)#interface vlan "0"
+(config-if)#standby "0" track 1 decrement 30
+(config)#track 1 interface gigabitEthernet 0/0 line-protocol
+(config-track)#end
+```
+**Verificar a configuração**
+```
+>enable
+#show track 1
+```
 
 
 
