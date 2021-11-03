@@ -182,7 +182,8 @@ Esses foram nomes aleatórios escolhidos por puro cunho _Futebolístico_.
 (config-if)#standby 10 preempt
 (config-if)#standby 10 priority 120
 ```
->OBS:Por padrão aa prioridade é 100
+>OBS:Por padrão a prioridade é 100
+
 **Obter informações detalhadas**
 ```
 >enable
