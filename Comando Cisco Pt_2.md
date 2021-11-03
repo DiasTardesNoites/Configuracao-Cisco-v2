@@ -202,7 +202,60 @@ Esses foram nomes aleatórios escolhidos por puro cunho _Futebolístico_.
 >enable
 #show track 1
 ```
-
+# COMANDOS DHCP
+**Excluir Endereço IPv4**
+```
+>enable
+#configure terminal
+(config)#ip dhcp excluded-address [low-address] [high-address]
+```
+**Definir um nome de pool DHCP**
+```
+>enable
+#configure terminal
+(config)#ip dhcp pool [pool-name]
+```
+**Definir o pool de endereços**
+```
+>enable
+#configure terminal
+(config)#ip dhcp pool [pool-name]
+(dhcp-config)# network 0.0.0.0 0.0.0.0
+```
+**Definir o roteador ou gateway padrão**
+```
+>enable
+#configure terminal
+(config)#ip dhcp pool [pool-name]
+(dhcp-config)#default-router 0.0.0.0
+```
+**Definir um servidor DNS**
+```
+>enable
+#configure terminal
+(config)#ip dhcp pool [pool-name]
+(dhcp-config)#dns-server 0.0.0.0
+```
+**Definir um servidor DNS**
+```
+>enable
+#configure terminal
+(config)#ip dhcp pool [pool-name]
+(dhcp-config)#domain-name AthleticoPaidoMengo.com
+```
+**Configuração com os comandos acima**
+```
+>enable
+#configure terminal
+(config)#ip dhcp excluded-address 0.0.0.0 0.0.0.0
+(config)#ip dhcp excluded-address 0.0.0.0
+(config)#ip dhcp pool [pool-name]
+(dhcp-config)#network 0.0.0.0 0.0.0.0
+(dhcp-config)#default-router 0.0.0.0
+(dhcp-config)#dns-server 0.0.0.0
+(dhcp-config)#domain-name AthleticoPaidoMengo.com
+(dhcp-config)#end
+```
 
 
 
