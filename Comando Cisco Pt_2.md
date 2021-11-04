@@ -257,13 +257,38 @@ Esses foram nomes aleatórios escolhidos por puro cunho _Futebolístico_.
 (dhcp-config)#domain-name AthleticoPaidoMengo.com
 (dhcp-config)#end
 ```
+**Exibir os comandos DHCP configurados**
+```
+>enable
+#show running-config | section dhcp
+```
+**Exibir lista de endereços IPv4 para ligações de MAC fornecidas pelo serviço DHCP**
+```
+>enable
+#show ip dhcp binding
+```
+**Exibir informações de contagem com relção às mensagens DHCP**
+```
+>enable
+#show ip dhcp server statistics
+```
+**Verificar no Windows**
+```
+>ipconfig /all
+```
 
+>OBS:Para que os códigos funcionem não é necessário que 
+>o nome seja **AthleticoPaidoMengo**!
+>Esse foi um nome aleatório escolhidos por puro cunho _Futebolístico_. 
 
+~~~javascript
+CALMA,CALMA. ESTAMOS QUASE ACABANDO!
+CHEGAMOS EM NOSSA RETA FINAL
+VEM AÍ...
+~~~
 
+<img src="http://manaus.radiomixfm.com.br/wp-content/uploads/2019/10/coringa-3.jpg" width="230">
 
-
-
-
-
-
-<img src="https://media3.giphy.com/media/3o7bu3XilJ5BOiSGic/giphy.gif?cid=ecf05e47gds2nlhmmv31k1o1ibypgrbo2ai2lf3m08kg35rx&rid=giphy.gif&ct=g" width="150">
+~~~javascript
+PARTE 3
+~~~
